@@ -24,7 +24,8 @@ jobs:
       run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorGitHubPage\/" \/>/g' release/wwwroot/index.html
       
     - name: Commit wwwroot to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.3.0
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
           branch: gh-pages
           folder: release/wwwroot
+          clean-exclude: .nojekyll
