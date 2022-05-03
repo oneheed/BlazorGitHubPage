@@ -22,5 +22,6 @@ jobs:
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.2.0
       with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: release/wwwroot
