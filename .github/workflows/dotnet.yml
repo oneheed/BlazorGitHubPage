@@ -19,8 +19,8 @@ jobs:
     - name: Publish .NET Core Project
       run: dotnet publish BlazorGitHubPages.csproj -c Release -o release --nologo
       
-    # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to BlazorGitHubPage
+    # 修改 index.html 的 base href 設定
+    - name: 修改 index.html 的 base href 設定
       run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorGitHubPage\/" \/>/g' release/wwwroot/index.html
       
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
